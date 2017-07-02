@@ -1,5 +1,7 @@
 class Order(object):
 	"""docstring for Order"""
+	table = "Orders"
+
 	def __init__(self, arg):
 		super(Order, self).__init__()
 		self.truck = truck
@@ -17,3 +19,7 @@ class Order(object):
 	def get_short(self):
 		self.loading_quantity - self.received_quantity
 		
+
+	def save(dictionary):
+		print ("save Order")
+		Model.save(Order.table, dictionary)

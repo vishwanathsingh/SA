@@ -5,7 +5,7 @@ except:
     import Tkinter as tk  # for python 2
 import pygubu
 
-
+from Order import Order
 
 class Row:
     def __init__(self, master):
@@ -29,7 +29,7 @@ class Row:
         self.advance = self.get_object_from_mainwindow('e_advance')
         self.amount = self.get_object_from_mainwindow('e_amount')
 
-        populate_defaults()
+        self.populate_defaults()
         builder.connect_callbacks(self)
 
     def get_object_from_mainwindow(self, object_id):
@@ -41,10 +41,17 @@ class Row:
 
     def on_submit_button_click(self):
         print ("submit button was clicked")
+        Order.save()
 
-    def populate_defaults():
-        pass
-        
+    def populate_defaults(self):
+        Row.set_text(self.truck_num, "Enter truck num")
+        Row.set_text(self.date, "Enter date")
+        Row.set_text(self.loading, "Loading quantity in Tonnes")
+        Row.set_text(self.received, "Quanity Received")
+        Row.set_text(self.client, "Client Id")
+        Row.set_text(self.rate, "Rate")
+        Row.set_text(self.advance, "Advance Paid")
+        Row.set_text(self.amount, "Total amount")
         
 
 class Application:
