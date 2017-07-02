@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface>
+  <object class="tk.Frame" id="OrderDetails">
+    <property name="height">200</property>
+    <property name="width">200</property>
+    <layout>
+      <property name="column">0</property>
+      <property name="propagate">True</property>
+      <property name="row">0</property>
+      <rows>
+        <row id="0">
+          <property name="pad">5</property>
+        </row>
+        <row id="1">
+          <property name="pad">5</property>
+        </row>
+        <row id="10">
+          <property name="pad">5</property>
+        </row>
+        <row id="11">
+          <property name="pad">5</property>
+        </row>
+        <row id="2">
+          <property name="pad">5</property>
+        </row>
+        <row id="3">
+          <property name="pad">5</property>
+        </row>
+        <row id="4">
+          <property name="pad">5</property>
+        </row>
+        <row id="5">
+          <property name="pad">5</property>
+        </row>
+        <row id="6">
+          <property name="pad">5</property>
+        </row>
+        <row id="7">
+          <property name="pad">5</property>
+        </row>
+        <row id="8">
+          <property name="pad">5</property>
+        </row>
+        <row id="9">
+          <property name="pad">5</property>
+        </row>
+      </rows>
+      <columns>
+        <column id="0">
+          <property name="pad">5</property>
+        </column>
+      </columns>
+    </layout>
+    <child>
+      <object class="tk.Entry" id="truck_num">
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Entry" id="date">
+        <property name="text" translatable="yes">Date</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Entry" id="gc_num">
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">2</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Label" id="l_truck">
+        <property name="text" translatable="yes">Truck Number</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Label" id="l_date">
+        <property name="text" translatable="yes">Date</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Label" id="l_gcnum">
+        <property name="text" translatable="yes">GCNUM</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">2</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Label" id="l_loading">
+        <property name="text" translatable="yes">Loading Quantity</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">3</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Label" id="l_received">
+        <property name="text" translatable="yes">Received Quantity</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">4</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Label" id="l_client">
+        <property name="text" translatable="yes">Client</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">5</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Label" id="l_rate">
+        <property name="text" translatable="yes">Rate</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">6</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Label" id="l_advance">
+        <property name="text" translatable="yes">Advance</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">7</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Label" id="l_amount">
+        <property name="text" translatable="yes">Amount</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">8</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Label" id="l_short">
+        <property name="text" translatable="yes">Short</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">9</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Label" id="l_balance">
+        <property name="text" translatable="yes">Balance</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">10</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Entry" id="e_loading">
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">3</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Entry" id="e_received">
+        <layout>
+          <property name="column">01</property>
+          <property name="propagate">True</property>
+          <property name="row">4</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Entry" id="e_client">
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">5</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Entry" id="e_rate">
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">6</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Entry" id="e_advance">
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">7</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Entry" id="e_amount">
+        <layout>
+          <property name="column">01</property>
+          <property name="propagate">True</property>
+          <property name="row">8</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Entry" id="e_short">
+        <property name="text" translatable="yes">0</property>
+        <layout>
+          <property name="column">01</property>
+          <property name="propagate">True</property>
+          <property name="row">9</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Entry" id="e_balance">
+        <property name="text" translatable="yes">1</property>
+        <layout>
+          <property name="column">01</property>
+          <property name="propagate">True</property>
+          <property name="row">10</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Button" id="b_submit">
+        <property name="command">on_submit_button_click</property>
+        <property name="text" translatable="yes">OK</property>
+        <bind add="" handler="" sequence="" />
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">11</property>
+        </layout>
+      </object>
+    </child>
+  </object>
+</interface>
