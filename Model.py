@@ -4,8 +4,7 @@ database = 'example.db'
 
 def connect():
 	conn = sqlite3.connect(database)
-	c = conn.cursor()
-	return c
+	return conn
 
 def create_table(table, column_tuples):
 	c = connect()
@@ -15,17 +14,22 @@ def create_table(table, column_tuples):
 
 
 def save(table, values_dict):
-	c = connect()
+	conn = connect()
 	columns = []
 	values = []
 	for item, value in values_dict.items():
 		columns.append(item)
-		values.append(value)
+		v, t = value
+		if t == "text":
+			values.append("'" + v + "'")
+		else:
+			values.append(v)
 
 	insert_query = "Insert into " + table + " ( " + ", ".join(columns) + " )" + " values " + " ( " + ", ".join(values) + " );"
 	print (insert_query)
-	c.execute(insert_query)
-	c.close()
+	conn.cursor().execute(insert_query)
+	conn.commit()
+	conn.close()
 
 def get_by_id():
 	pass

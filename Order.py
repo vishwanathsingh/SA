@@ -25,13 +25,13 @@ class Order(object):
 	def save(value_dict):
 		#self.entries = {'truck_num': None, 'date': None, 'gc_num': None, 'e_loading': None, 'e_received': None, 'e_client': None, 'e_rate': None, 'e_advance': None, 'e_amount': None}
 		print ("save Order")
-		values = {'date': value_dict['date'], 
-					'truck': value_dict['truck_num'], 
-					'gc_num': value_dict['gc_num'], 
-					'client': value_dict['e_client'],
-					'loading_quantity': value_dict['e_loading'],
-					'received_quantity': value_dict['e_received'], 
-					'rate': value_dict['e_rate']
+		values = {'date': (value_dict['date'], "text"), 
+					'truck': (value_dict['truck_num'], "text"), 
+					'gc_num': (value_dict['gc_num'], "text"), 
+					'client': (value_dict['e_client'], "text"),
+					'loading_quantity': (value_dict['e_loading'], "real"),
+					'received_quantity': (value_dict['e_received'], "real"),
+					'rate': (value_dict['e_rate'], "real")
 					}
 
 		Model.save(Order.table, values)
