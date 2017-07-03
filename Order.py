@@ -1,3 +1,5 @@
+import Model
+
 class Order(object):
 	"""docstring for Order"""
 	table = "Orders"
@@ -20,6 +22,16 @@ class Order(object):
 		self.loading_quantity - self.received_quantity
 		
 
-	def save(dictionary):
+	def save(value_dict):
+		#self.entries = {'truck_num': None, 'date': None, 'gc_num': None, 'e_loading': None, 'e_received': None, 'e_client': None, 'e_rate': None, 'e_advance': None, 'e_amount': None}
 		print ("save Order")
-		Model.save(Order.table, dictionary)
+		values = {'date': value_dict['date'], 
+					'truck': value_dict['truck_num'], 
+					'gc_num': value_dict['gc_num'], 
+					'client': value_dict['e_client'],
+					'loading_quantity': value_dict['e_loading'],
+					'received_quantity': value_dict['e_received'], 
+					'rate': value_dict['e_rate']
+					}
+
+		Model.save(Order.table, values)

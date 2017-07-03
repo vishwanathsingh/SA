@@ -1,38 +1,40 @@
 import sqlite3
 
-class Model(object):
-	"""docstring for Model"""
+database = 'example.db'
 
-	database = "example.db"
-	def __init__(self, arg):
-		super(Model, self).__init__()
-		self.arg = arg
+def connect():
+	conn = sqlite3.connect(database)
+	c = conn.cursor()
+	return c
 
-	def connect():
-		conn = sqlite3.connect(database)
-		c = conn.cursor()
-		return c
-
-	def create_table(table, column_tuples):
-		c = connect()
-		columns = _get_sql_string(column_tuples)
-		c.execute("CREATE TABLE " + table  + " " + columns)
-		c.close()
+def create_table(table, column_tuples):
+	c = connect()
+	columns = _get_sql_string(column_tuples)
+	c.execute("CREATE TABLE " + table  + " " + columns)
+	c.close()
 
 
-	def save(table, values):
-		c = connect()
-		c.execute("Insert into " + table + "values ( " + values + " )");
-		c.close()
+def save(table, values_dict):
+	c = connect()
+	columns = []
+	values = []
+	for item, value in values_dict.items():
+		columns.append(item)
+		values.append(value)
 
-	def get_by_id():
-		pass
+	insert_query = "Insert into " + table + " ( " + ", ".join(columns) + " )" + " values " + " ( " + ", ".join(values) + " );"
+	print (insert_query)
+	c.execute(insert_query)
+	c.close()
 
-	def select(query):
-		pass
+def get_by_id():
+	pass
 
-	def update(query):
-		pass
+def select(query):
+	pass
+
+def update(query):
+	pass
 
 
-		
+	
