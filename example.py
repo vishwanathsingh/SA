@@ -4,6 +4,7 @@ try:
 except:
     import Tkinter as tk  # for python 2
 import pygubu
+from tkinter import messagebox
 
 from Order import Order
 
@@ -57,15 +58,64 @@ class Row:
         Row.set_text(self.entries['e_amount'], "12")#"Total amount")
         
 
-class Application:
+class Application():
+
     def __init__(self, master):
+
+        #1: Create builder
         self.builder = builder = pygubu.Builder()
 
-        builder.add_from_file('example.ui')
+        #2: Load UI file
+        builder.add_from_file('menu.ui')
 
+        #3: Create the widget using self.master as parent
         self.mainwindow = builder.get_object('mainwindow', master)
+  
+        # Set main menu
+        self.mainmenu = menu = builder.get_object('mainmenu', master)
+        self.set_menu(menu)
+
         builder.connect_callbacks(self)
 
+
+    def on_add_order(self):
+        print("hello")
+        Row(self.mainwindow)
+
+    
+
+class MyApplication(pygubu.TkApplication):
+
+    def _create_ui(self):
+        #1: Create a builder
+        self.builder = builder = pygubu.Builder()
+
+        #2: Load an ui file
+        builder.add_from_file('menu.ui')
+
+        #3: Create the widget using self.master as parent
+        self.mainwindow = builder.get_object('mainwindow', self.master)
+
+        # Set main menu
+        self.mainmenu = menu = builder.get_object('mainmenu', self.master)
+        self.set_menu(menu)
+
+        # Configure callbacks
+        builder.connect_callbacks(self)
+
+
+    def on_mfile_item_clicked(self, itemid):
+        if itemid == 'mfile_open':
+            messagebox.showinfo('File', 'You clicked Open menuitem')
+            Row(self.mainwindow)
+
+        if itemid == 'mfile_quit':
+            messagebox.showinfo('File', 'You clicked Quit menuitem. Byby')
+            self.quit();
+
+
+    def on_about_clicked(self):
+        messagebox.showinfo('About', 'You clicked About menuitem')
 
     def on_add_order(self):
         print("hello")
@@ -74,5 +124,5 @@ class Application:
 
 if __name__ == '__main__':
     root = tk.Tk()
-    app = Application(root)
-    root.mainloop()
+    app = MyApplication(root)
+    app.run()
